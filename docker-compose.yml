@@ -15,7 +15,7 @@ services:
       retries: 3
       timeout: 3s
   logworker:
-    container_name: c7-log-taskworker
+    # container_name: c7-log-taskworker
     image: rob2universe/c7-log-taskworker
     build:
       context: ./
@@ -23,8 +23,11 @@ services:
     environment:
       - camunda.bpm.client.base-url=http://c7engine:8080/engine-rest
       - logging.level.root=info
-      - topic=rest
+      - topic=rlog
     depends_on:
      c7engine:
         condition: service_healthy
+    deploy:
+      mode: replicated
+      replicas: 3
 
