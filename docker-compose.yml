@@ -23,7 +23,7 @@ services:
     environment:
       - camunda.bpm.client.base-url=http://c7engine:8080/engine-rest
       - logging.level.root=info
-      - topic=rlog
+      - topic=log
     depends_on:
      c7engine:
         condition: service_healthy
