@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "49832440-e823-4b6a-8e4b-6cf3e7f1127a",
+		"name": "Camunda 7 REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9375487"
+	},
+	"item": [
+		{
+			"name": "Process Defnition",
+			"item": [
+				{
+					"name": "Start Process Instance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"variables\": {\r\n          \"listOfItems\": {\r\n        \"value\": \"[\\\"1\\\",\\\"2\\\",\\\"3\\\",\\\"4\\\",\\\"5\\\",\\\"6\\\",\\\"7\\\",\\\"8\\\",\\\"9\\\",\\\"10\\\"]\",\r\n        \"type\": \"Object\",\r\n        \"valueInfo\" : {\"objectTypeName\": \"java.util.ArrayList\", \"serializationDataFormat\":\"application/json\"}\r\n    }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{rest_url}}/process-definition/key/example-process/start",
+							"host": [
+								"{{rest_url}}"
+							],
+							"path": [
+								"process-definition",
+								"key",
+								"example-process",
+								"start"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Start process instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"variables\": {\r\n    \"aVariable\" : {\r\n        \"value\" : \"aStringValue\",\r\n        \"type\": \"String\"\r\n    },\r\n    \"anotherVariable\" : {\r\n      \"value\" : true,\r\n      \"type\": \"Boolean\"\r\n    }\r\n  },\r\n \"businessKey\" : \"myBusinessKey\"\r\n}"
+								},
+								"url": {
+									"raw": "{{rest_url}}/process-definition/key/RomeInvades/start?=",
+									"host": [
+										"{{rest_url}}"
+									],
+									"path": [
+										"process-definition",
+										"key",
+										"RomeInvades",
+										"start"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Oct 2019 07:25:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/rest/process-instance/b5b370bb-e8d3-11e9-bfce-9eb6d0894ce9\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"b5b370bb-e8d3-11e9-bfce-9eb6d0894ce9\",\n    \"definitionId\": \"RomeInvades:1:e5dc2e91-e8ce-11e9-bfce-9eb6d0894ce9\",\n    \"businessKey\": \"myBusinessKey\",\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Start Process Instance ExternalWorkerExample",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"variables\": {\r\n          \"listOfItems\": {\r\n        \"value\": \"[\\\"1\\\",\\\"2\\\",\\\"3\\\",\\\"4\\\",\\\"5\\\",\\\"6\\\",\\\"7\\\",\\\"8\\\",\\\"9\\\",\\\"10\\\"]\",\r\n        \"type\": \"Object\",\r\n        \"valueInfo\" : {\"objectTypeName\": \"java.util.ArrayList\", \"serializationDataFormat\":\"application/json\"}\r\n    }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{rest_url}}/process-definition/key/ExternalWorkerExample/start",
+							"host": [
+								"{{rest_url}}"
+							],
+							"path": [
+								"process-definition",
+								"key",
+								"ExternalWorkerExample",
+								"start"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Start process instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"variables\": {\r\n    \"aVariable\" : {\r\n        \"value\" : \"aStringValue\",\r\n        \"type\": \"String\"\r\n    },\r\n    \"anotherVariable\" : {\r\n      \"value\" : true,\r\n      \"type\": \"Boolean\"\r\n    }\r\n  },\r\n \"businessKey\" : \"myBusinessKey\"\r\n}"
+								},
+								"url": {
+									"raw": "{{rest_url}}/process-definition/key/RomeInvades/start?=",
+									"host": [
+										"{{rest_url}}"
+									],
+									"path": [
+										"process-definition",
+										"key",
+										"RomeInvades",
+										"start"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Oct 2019 07:25:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"links\": [\n        {\n            \"method\": \"GET\",\n            \"href\": \"http://localhost:8080/rest/process-instance/b5b370bb-e8d3-11e9-bfce-9eb6d0894ce9\",\n            \"rel\": \"self\"\n        }\n    ],\n    \"id\": \"b5b370bb-e8d3-11e9-bfce-9eb6d0894ce9\",\n    \"definitionId\": \"RomeInvades:1:e5dc2e91-e8ce-11e9-bfce-9eb6d0894ce9\",\n    \"businessKey\": \"myBusinessKey\",\n    \"caseInstanceId\": null,\n    \"ended\": false,\n    \"suspended\": false,\n    \"tenantId\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "demo",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "demo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
